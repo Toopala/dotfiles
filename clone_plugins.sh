@@ -7,4 +7,4 @@ git clone https://github.com/mfukar/robotframework-vim;
 git clone https://github.com/scrooloose/syntastic;
 git clone https://github.com/leshill/vim-json;
 git clone https://github.com/powerline/powerline;
-git clone https://github.com/fab-du/vim-sensible;
+git clone https://github.com/tpope/vim-sensible.git;
