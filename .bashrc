@@ -11,7 +11,6 @@ fi
 # User spesific commands 
 set -o vi
 # User spesific aliases
-alias runrfnd='/home/miikasaastamoinen/bin/run-rfund-cnsmr.sh'
 
 # User specific functions
 PINK="[35;80m"
@@ -44,6 +43,6 @@ hg_branch() {
 }
 export PS1='\n\
 \e${LIGHT_GREEN}\t\e${NONE} \
-\e${NONE}\e${REDBACK_BLACKTEXT}MAC@\h\
+\e${NONE}\e${GREENBACK_BLACKTEXT}$USER@\h\
 \e${NONE}:\e${ORANGE}\w\
 $(hg_branch)\e${NONE}\n$ '

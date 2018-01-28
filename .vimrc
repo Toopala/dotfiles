@@ -1,37 +1,44 @@
-"Pathogen
-execute pathogen#infect()
-call pathogen#helptags()
+"Prerequisites to run this vimrc
+"sudo apt-get install silversearcher-ag
+"sudo apt-get install ctags
 
-"Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_quiet_messages = { "type": "style" }
+call plug#begin('~/.vim/plugged')
+	Plug 'https://github.com/tpope/vim-sensible.git'
+	Plug 'scrooloose/nerdtree'
+	Plug 'tomasr/molokai'
+	Plug 'sickill/vim-monokai'
+	Plug 'https://github.com/tpope/vim-surround.git'
+	Plug 'https://github.com/kien/ctrlp.vim.git'
+	Plug 'https://github.com/mileszs/ack.vim.git'
 
-"Sensible vim
-runtime! plugin/sensible.vim
+call plug#end()
 
-"User defined
-filetype plugin indent on
+""""""PLUGIN SETTINGS""""""
+"Ack.vim : ack to ag
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 
-set path=/Users/miikasaastamoinen/work/**
-set number
-set ic
-set mouse=a
-colorscheme elflord
+"Remapping
+map <C-n> :NERDTreeToggle<CR>
+
+"Vim settings
 syntax on
-
-"Keybinds
-map ä :exec "Ag " . expand("<cword>")<cr>
-map Ä :exec "Ag "<cr>
-
-"Colors
-highlight OK        ctermfg=green guifg=#42f456
-highlight FAIL      ctermfg=red  guifg=#ff0000
-highlight CLARIFY   ctermfg=yellow guifg=#f4d442
-highlight NOTE	    ctermfg=yellow guifg=#f4d442
+set cursorline
+set autoindent
+set smartindent
+set paste
+set number
+set encoding=utf-8
+set incsearch
+set hlsearch
+set ignorecase
+set tabstop=4
+set shiftwidth=4
+colorscheme monokai
