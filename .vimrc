@@ -10,11 +10,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 	Plug 'https://github.com/tpope/vim-sensible.git'
-	Plug 'scrooloose/nerdtree'
-	Plug 'tomasr/molokai'
-	Plug 'sickill/vim-monokai'
+	Plug 'https://github.com/scrooloose/nerdtree'
+	Plug 'https://github.com/tomasr/molokai'
+	Plug 'https://github.com/sickill/vim-monokai'
 	Plug 'https://github.com/tpope/vim-surround.git'
-	Plug 'https://github.com/kien/ctrlp.vim.git'
+    Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 	Plug 'https://github.com/mileszs/ack.vim.git'
 
 call plug#end()
@@ -27,10 +27,8 @@ endif
 
 "Remapping
 map <C-n> :NERDTreeToggle<CR>
-
 "Vim settings
 syntax on
-set cursorline
 set autoindent
 set smartindent
 set paste
