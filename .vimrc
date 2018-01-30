@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'https://github.com/tpope/vim-surround.git'
     Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 	Plug 'https://github.com/mileszs/ack.vim.git'
+	Plug 'https://github.com/jwalton512/vim-blade.git'
+	Plug 'https://github.com/terryma/vim-multiple-cursors'
 
 call plug#end()
 
@@ -26,7 +28,7 @@ if executable('ag')
 endif
 
 "Remapping
-map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeToggle<CR>
 "Vim settings
 syntax on
 set autoindent
